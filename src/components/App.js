@@ -1,5 +1,7 @@
 import React, { Component, useState } from "react";
 import "./../styles/App.css";
+import ListState from './States';
+
 
 // Do not alter the states const and values inside it.
 const states = [
@@ -155,7 +157,17 @@ const states = [
 ];
 
 function App() {
-  return <div id="main"></div>;
+  return (<div id="main">
+    <ul>
+      {states.map((state, stateIndex) => {
+        return <ListState StateName={state} key={stateIndex} id={stateIndex} />
+      })}
+    </ul>
+  </div>);
 }
 
 export default App;
+
+{/* <States states={states} />
+     <Cities states={states} />
+    <Towns states={states} />  */}
